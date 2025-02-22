@@ -1,0 +1,59 @@
+{
+  "name": "lsr/cqrs",
+  "description": "Laser framework CQRS implementation.",
+  "version": "0.1.0",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.laserliga.cz"
+    }
+  ],
+  "scripts": {
+    "test": "./vendor/bin/phpunit",
+    "docs": "doxygen",
+    "phpstan": "./vendor/bin/phpstan"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "phpunit/phpunit": "^11",
+    "phpstan/phpstan": "^2.0",
+    "phpstan/extension-installer": "^1.2",
+    "phpstan/phpstan-nette": "^2.0",
+    "squizlabs/php_codesniffer": "^3.11"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lsr\\CQRS\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "TestCases\\": "tests/TestCases/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Tomáš Vojík",
+      "email": "vojik@wboy.cz"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.4",
+    "lsr/core": "^0.3",
+    "lsr/interfaces": "^0.3",
+    "lsr/logging": "^0.3",
+    "nette/di": "^3.2",
+    "lsr/serializer": "^0.3"
+  },
+  "config": {
+    "allow-plugins": {
+      "phpstan/extension-installer": true
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "v0.1": "0.1.x-dev"
+    }
+  }
+}
