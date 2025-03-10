@@ -14,6 +14,10 @@ class CommandBus
       protected readonly ?AsyncCommandBusInterface $asyncCommandBus = null,
     ) {}
 
+    /**
+     * @template T of mixed
+     * @param  CommandInterface<T>  $command
+     */
     public function dispatchAsync(CommandInterface $command) : void {
         if ($this->asyncCommandBus === null) {
             throw new RuntimeException('AsyncCommandBus is not set');
@@ -21,13 +25,21 @@ class CommandBus
         $this->asyncCommandBus->dispatch($command);
     }
 
-    public function dispatch(CommandInterface $command) : void {
+    /**
+     * @template T of mixed
+     * @param  CommandInterface<T>  $command
+     * @return T
+     */
+    public function dispatch(CommandInterface $command) : mixed {
         $handler = $this->getHandler($command);
-        $handler->handle($command);
+        return $handler->handle($command);
     }
 
     /**
      * Find handler for command using DI
+     *
+     * @template T of mixed
+     * @param  CommandInterface<T>  $command
      */
     public function getHandler(CommandInterface $command) : CommandHandlerInterface {
         if (class_exists($command->getHandler())) {

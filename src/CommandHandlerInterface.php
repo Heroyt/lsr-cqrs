@@ -6,6 +6,11 @@ namespace Lsr\CQRS;
 interface CommandHandlerInterface
 {
 
-    public function handle(CommandInterface $command) : void;
+    /**
+     * @template T of mixed
+     * @param  CommandInterface<T>  $command
+     * @return T
+     */
+    public function handle(CommandInterface $command) : mixed;
 
 }
