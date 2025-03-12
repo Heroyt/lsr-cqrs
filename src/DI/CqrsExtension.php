@@ -32,7 +32,7 @@ class CqrsExtension extends CompilerExtension
         $builder = $this->getContainerBuilder();
 
         $asyncBus = $this->config->asyncBus;
-        if (is_string($asyncBus)) {
+        if (is_string($asyncBus) && !str_starts_with($asyncBus, '@')) {
             $asyncBus = '@'.$asyncBus;
         }
         $builder->addDefinition($this->prefix('command.bus'))
