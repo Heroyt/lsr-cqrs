@@ -40,7 +40,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=8.4",
-    "lsr/core": "^0.3",
+    "lsr/core": "^0.3 || ^0.4",
     "lsr/interfaces": "^0.3",
     "lsr/logging": "^0.3",
     "nette/di": "^3.2",
