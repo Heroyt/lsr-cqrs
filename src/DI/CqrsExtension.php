@@ -44,7 +44,7 @@ class CqrsExtension extends CompilerExtension
                     $asyncBus,
                   ],
                 )
-                ->setTags(['lsr', 'cqrs']);
+                ->setTags(['lsr' => true, 'cqrs' => true]);
     }
 
 }
