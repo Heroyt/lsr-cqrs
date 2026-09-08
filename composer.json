@@ -1,5 +1,6 @@
 {
   "name": "lsr/cqrs",
+  "license": "MIT",
   "description": "Laser framework CQRS implementation.",
   "version": "0.1.4",
   "repositories": [
