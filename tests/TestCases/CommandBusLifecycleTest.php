@@ -11,8 +11,7 @@ use RuntimeException;
 
 final class CommandBusLifecycleTest extends TestCase
 {
-    public function testLifecycleWrapsSuccessfulDispatch(): void
-    {
+    public function test_lifecycle_wraps_successful_dispatch(): void {
         $scope = new RecordingCommandScope();
         $hook = new RecordingCommandHook($scope);
         $handler = $this->createStub(CommandHandlerInterface::class);
@@ -30,8 +29,7 @@ final class CommandBusLifecycleTest extends TestCase
         self::assertNull($scope->exception);
     }
 
-    public function testLifecycleRecordsFailedDispatchAndPreservesException(): void
-    {
+    public function test_lifecycle_records_failed_dispatch_and_preserves_exception(): void {
         $expected = new RuntimeException('handler failed');
         $scope = new RecordingCommandScope();
         $handler = $this->createStub(CommandHandlerInterface::class);
@@ -53,8 +51,7 @@ final class CommandBusLifecycleTest extends TestCase
         self::assertSame(1, $scope->completed);
     }
 
-    public function testLifecycleFailuresNeverAffectDispatch(): void
-    {
+    public function test_lifecycle_failures_never_affect_dispatch(): void {
         $scope = new RecordingCommandScope();
         $scope->throwOnComplete = true;
         $hook = new RecordingCommandHook($scope);

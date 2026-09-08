@@ -9,8 +9,7 @@ use Lsr\CQRS\CommandInterface;
 /** @implements CommandInterface<string> */
 final class LifecycleCommand implements CommandInterface
 {
-    public function getHandler(): string
-    {
+    public function getHandler(): string {
         return 'unused';
     }
 }
