@@ -5,7 +5,7 @@
 ## Requirements
 
 - PHP `>=8.4`.
-- LSR Core `^0.3 || ^0.4 || ^0.5`; LSR Interfaces, Logging and Serializer `^0.3`; Nette DI `^3.2`.
+- LSR Core `^0.3 || ^0.4 || ^0.5 || ^0.6`; LSR Interfaces, Logging and Serializer `^0.3`; Nette DI `^3.2`. Core 0.6 admission is new in **0.1.7 (unreleased)**; older Core ranges remain supported.
 - A bootstrapped `Lsr\Core\App` and registered command-handler services.
 - No PHP extensions are explicitly required by this package's manifest; its framework dependencies have their own platform requirements.
 
