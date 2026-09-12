@@ -2,7 +2,7 @@
   "name": "lsr/cqrs",
   "license": "MIT",
   "description": "Laser framework CQRS implementation.",
-  "version": "0.1.7-dev",
+  "version": "0.1.7",
   "repositories": [
     {
       "type": "composer",
@@ -37,7 +37,7 @@
   },
   "authors": [
     {
-      "name": "Tomáš Vojík",
+      "name": "Tom\u00e1\u0161 Voj\u00edk",
       "email": "vojik@wboy.cz"
     }
   ],
