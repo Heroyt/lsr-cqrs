@@ -40,6 +40,7 @@ class CommandBus
      * @template T of mixed
      * @param  CommandInterface<T>  $command
      * @return T
+     * @phpstan-impure Dispatching runs a handler with side effects; repeated calls may differ.
      */
     public function dispatch(CommandInterface $command): mixed {
         $scope = $this->beginLifecycle($command);
